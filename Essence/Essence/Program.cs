@@ -11,7 +11,7 @@ namespace Essence
     {
         static void Main(string[] args)
         {
-            TestBot testBot = new TestBot();
+            QueueBot testBot = new QueueBot();
             testBot.Run();
             
         }

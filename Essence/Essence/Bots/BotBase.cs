@@ -23,7 +23,7 @@ namespace Essence.Bots
             Process applicationProcess = Process.GetProcessesByName(Globals.ProcessName).First();
             IntPtr pointer = applicationProcess.MainWindowHandle;
             ApplicationWindow = new Rectangle();
-            Helper.Win32.GetWindowRect(pointer, ref ApplicationWindow);
+            Win32.GetWindowRect(pointer, ref ApplicationWindow);
             logger.Info(ApplicationWindow.ToString());
             logger.Info($"Running {BotName}");
             Active = true;

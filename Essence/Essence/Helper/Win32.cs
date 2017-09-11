@@ -19,6 +19,12 @@ namespace Essence.Helper
             [DllImport("user32.dll", SetLastError = true)]
             public static extern IntPtr FindWindowEx(IntPtr parentHandle, IntPtr childAfter, string className, string windowTitle);
 
+            [DllImport("user32.dll")]
+            public static extern bool GetCursorPos(out PointSequential lpPoint);
+
+            [DllImport("user32.dll")]
+            public static extern bool SetCursorPos(int x, int y);
+
             [DllImport("user32.dll", SetLastError = true)]
             [return: MarshalAs(UnmanagedType.Bool)]
             public static extern bool GetWindowRect(IntPtr hWnd, ref Rectangle lpRect);
@@ -27,8 +33,8 @@ namespace Essence.Helper
             [return: MarshalAs(UnmanagedType.Bool)]
             public static extern bool GetClientRect(IntPtr hWnd, ref Rectangle lpRect);
 
-            
-
+            [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
+            public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);
 
             [DllImport("user32.dll")]
             public static extern bool ClientToScreen(IntPtr hWnd, ref Point lpPoint);
